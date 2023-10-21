@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #710586;
+}
+
+header {
+  border-bottom: 1px solid #480355;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+}
+.nav-branding p {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.nav__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+.nav__menu-link {
+  transition: 1s all ease;
+}
+.nav__menu-link:hover {
+  border-bottom: 1px solid #f20ab1;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav__menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #480355;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  .nav__menu-item {
+    margin: 16px 0px;
+  }
+  .nav__menu.active {
+    left: 0;
+  }
+}
+.hero__title {
+  padding-top: 50px;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+}
+.hero__cards, .hero__numbers {
+  padding: 5px;
+  margin-top: 50px;
+  display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.hero__cards-card, .hero__cards-num, .hero__numbers-card, .hero__numbers-num {
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background-color: #710586;
+}
+.hero__cards-card p, .hero__cards-num p, .hero__numbers-card p, .hero__numbers-num p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+.hero__cards-card:hover, .hero__cards-num:hover, .hero__numbers-card:hover, .hero__numbers-num:hover {
+  background-color: #d000b3;
+}
+.hero__cards .firstCard, .hero__numbers .firstCard {
+  border-radius: 10px 0px 0px 10px;
+}
+.hero__cards .lastCard, .hero__numbers .lastCard {
+  border-radius: 0px 10px 10px 0px;
+}
+.hero__cards:hover, .hero__numbers:hover {
+  cursor: pointer;
+}
+.hero__numbers {
+  gap: 10px;
+  display: none;
+}
+.hero__numbers-num {
+  border-radius: 10px;
+}
+.hero__infoTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 30px;
+  font-size: 30px;
+  gap: 20px;
+  color: #fff;
+}
+.hero__table-first, .hero__table-second {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+.hero__table-first th, .hero__table-second th {
+  font-size: 15px;
+  padding: 10px 0px;
+  color: #710586;
+  border-bottom: 1px solid #710586;
+}
+.hero__table-first td, .hero__table-second td {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+  padding: 10px 0px;
+  text-align: center;
+}
+.hero__table-first {
+  margin-bottom: 30px;
+}
+.hero__table-first-title {
+  margin-top: 30px;
+  display: none;
+  text-align: center;
+  padding: 10px 0px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  background-color: #d000b3;
+}
+.hero__table-second {
+  margin-bottom: 30px;
+}
+.hero__table-second-title {
+  margin-top: 30px;
+  display: none;
+  text-align: center;
+  padding: 10px 0px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  background-color: #d000b3;
+}
+.hero__route {
+  margin-bottom: 123px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.hero__route img {
+  max-width: 1200px;
+  width: 100%;
+}
+.hero__route a {
+  display: block;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.footer {
+  background-color: #2b0232;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.footer h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+.footer p {
+  text-align: center;
+  font-size: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0px 15px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .hero__cards {
+    flex-wrap: wrap;
+  }
+  .hero__cards .firstCard {
+    border-radius: 10px 10px 0px 0px;
+  }
+  .hero__cards .lastCard {
+    border-radius: 0px 0px 10px 10px;
+  }
+  .mainCon {
+    margin-bottom: 130px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .hero__numbers {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=main.css.map */

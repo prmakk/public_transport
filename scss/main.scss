@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+$mainBgColor: #710586;
+$hoverColor: #f20ab1;
+$secondBgColor: #d000b3;
+
+body{
+    background-color: $mainBgColor;
+}
+
+header{
+    border-bottom: 1px solid darken($mainBgColor, 10%);
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar{
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-branding{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    p{
+        font-weight: 500;
+        font-size: 18px;
+    }
+}
+
+.nav__menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    &-link{
+        transition: 1s all ease;
+
+        &:hover{
+            //color: $hoverColor;
+            border-bottom: 1px solid $hoverColor;
+        }
+    }
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav__menu{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: darken($mainBgColor, 10%);
+        width: 100%;
+        text-align: center;
+        transition: .3s;
+
+        &-item{
+            margin: 16px 0px;
+        }
+
+        &.active{
+            left: 0;
+        }
+    }
+}
+
+.hero{
+
+    &__title{
+        padding-top: 50px;
+        text-align: center;
+        color: #fff;
+        font-weight: 400;
+    }
+
+    
+    &__cards, &__numbers{
+        padding: 5px;
+        margin-top: 50px;
+        display: flex;
+        background-color: #fff;
+        border-radius: 10px;
+
+        &-card, &-num{
+            padding: 15px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            background-color: $mainBgColor;
+
+            p{
+                color: #fff;
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            &:hover{
+                background-color: $secondBgColor;
+            }
+        }
+
+        .firstCard{
+            border-radius: 10px 0px 0px 10px;
+        }
+
+        .lastCard{
+            border-radius: 0px 10px 10px 0px;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    &__numbers{
+        gap: 10px;
+        display: none;
+
+        &-num{
+            border-radius: 10px;
+        }
+    }
+
+    &__infoTitle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 30px;
+        font-size: 30px;
+        gap: 20px;
+        color: #fff;
+    }
+
+    &__table-first, &__table-second{
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        max-height: 400px;
+        overflow-y: scroll;
+
+        th{
+            font-size: 15px;
+            padding: 10px 0px;
+            color: $mainBgColor;
+            border-bottom: 1px solid $mainBgColor;
+        }
+
+        td{
+            border-bottom: 1px solid rgba($color: gray, $alpha: 0.3);
+            padding: 10px 0px;
+            text-align: center;
+        }
+    }
+
+    &__table-first{
+        //margin-bottom: 123px;
+        margin-bottom: 30px;
+        &-title{
+            margin-top: 30px;
+            display: none;
+            text-align: center;
+            padding: 10px 0px;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 500;
+            background-color: $secondBgColor;
+        }
+    }
+
+    &__table-second{
+        margin-bottom: 30px;
+        &-title{
+            //margin-top: -90px;
+            margin-top: 30px;
+            display: none;
+            text-align: center;
+            padding: 10px 0px;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 500;
+            background-color: $secondBgColor;
+        }
+    }
+
+    &__route{
+        margin-bottom: 123px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        img{
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        a{
+            display: block;
+            text-align: center;
+            opacity: .7;
+        }
+    }
+}
+
+.footer{
+    background-color: darken($mainBgColor, 17%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    //display: none;
+
+    h2{
+        font-size: 18px;
+        margin-bottom: 15px;
+        font-weight: 400;
+    }
+
+    p{
+        text-align: center;
+        font-size: 10px;
+    }
+}
+
+
+
+//RESPONSIVE DESIGN
+
+@media screen and (max-width: 1200px) {
+    .container{
+        padding: 0px 15px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .hero__cards{
+        flex-wrap: wrap;
+
+        .firstCard{
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        .lastCard{
+            border-radius: 0px 00px 10px 10px;
+        }
+    }
+
+    .mainCon{
+        margin-bottom: 130px;
+    }
+    
+}
+
+@media screen and (max-width: 430px) {
+    .hero__numbers{
+        flex-direction: column;
+    }
+    
+}

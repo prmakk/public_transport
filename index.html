@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <title>CityRideKR</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="nav-branding">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/bus.png" alt="bus">
+                    <p>CityRideKR</p>
+                </a>
+    
+                <ul class="nav__menu">
+                    <li class="nav__menu-item">
+                        <a href="#mainInfo" class="nav__menu-link navBus">Автобус</a>
+                    </li>
+                    <li class="nav__menu-item">
+                        <a href="#mainInfo" class="nav__menu-link navMiniBus">Маршрутка</a>
+                    </li>
+                    <li class="nav__menu-item">
+                        <a href="#mainInfo" class="nav__menu-link">Трамвай</a>
+                    </li>
+                    <li class="nav__menu-item">
+                        <a href="#mainInfo" class="nav__menu-link">Тролейбус</a>
+                    </li>
+                    <li class="nav__menu-item">
+                        <a href="#mainInfo" class="nav__menu-link">Швидкісний</a>
+                    </li>
+                </ul>
+    
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container mainCon">
+            <div class="hero">
+                <div class="hero__title">
+                    <h1 class="title">Розклад руху автобусів Кривий Ріг</h1>
+                </div>
+
+                <div class="hero__cards">
+                    <div class="hero__cards-card firstCard busChoose">
+                        <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/bus.png" alt="bus">
+                        <p>Автобус</p>
+                    </div>
+                    <div class="hero__cards-card minibusChoose">
+                        <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/bus-2.png" alt="bus-2">
+                        <p>Маршрутка</p>
+                    </div>
+                    <div class="hero__cards-card">
+                        <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/tram.png" alt="tram">
+                        <p>Трамвай</p>
+                    </div>
+                    <div class="hero__cards-card">
+                        <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/trolleybus.png" alt="trolleybus">
+                        <p>Тролейбус</p>
+                    </div>
+                    <div class="hero__cards-card lastCard">
+                        <img width="30" height="30" src="https://img.icons8.com/glyph-neue/64/ffffff/tram.png" alt="tram"/>
+                        <p>Швидкісний</p>
+                    </div>
+                </div>
+
+                <div class="hero__numbers" id="mainInfo">
+                    <div class="hero__numbers-num bus1">
+                        <p>1</p>
+                    </div>
+                    <div class="hero__numbers-num bus1A">
+                        <p>1A</p>
+                    </div>
+                    <div class="hero__numbers-num bus4">
+                        <p>4</p>
+                    </div>
+                    <div class="hero__numbers-num bus8">
+                        <p>8</p>
+                    </div>
+                    <div class="hero__numbers-num bus228">
+                        <p>228</p>
+                    </div>
+                    <div class="hero__numbers-num bus228A">
+                        <p>228A</p>
+                    </div>
+                    <div class="hero__numbers-num bus244">
+                        <p>244</p>
+                    </div>
+                    <div class="hero__numbers-num bus302">
+                        <p>302</p>
+                    </div>
+
+                    <div class="hero__numbers-num minibus479">
+                        <p>479</p>
+                    </div>
+                </div>
+
+                <div class="hero__infoTitle">
+                    <h1>Автобус №1</h1>
+                </div>
+                
+                <div class="hero__table-first-title">
+                    <p>ст. Кривий Ріг - Головний - Пл. Толстого</p>
+                </div>
+
+                <div class="hero__table-first">
+                </div>
+
+                <div class="hero__table-second-title">
+                    <p>ст. Кривий Ріг - Головний - Пл. Толстого</p>
+                </div>
+
+                <div class="hero__table-second">
+                </div>
+
+                <div class="hero__route">
+                    <div class="hero__route-img">
+                        <img src="images/bus1.jpg" alt="Bus1 Route" class="routeImage">
+                    </div>
+                    <a href="https://www.eway.in.ua/ru/cities/kryvyirih/routes/205" class="routeMore" target="_blank">Дізнатися більше</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" id="footer">
+        <h2>Copyright © 2023 CityRideKR</h2>
+        <p>Designed by prmk</p>
+        <p>Coded by prmk</p>
+    </footer>
+
+    <script src="js/hamburger.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
