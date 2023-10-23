@@ -249,6 +249,11 @@ a {
     padding: 0px 15px;
   }
 }
+@media screen and (max-width: 750px) {
+  .hero__numbers {
+    flex-direction: column;
+  }
+}
 @media screen and (max-width: 570px) {
   .hero__cards {
     flex-wrap: wrap;
@@ -261,10 +266,5 @@ a {
   }
   .mainCon {
     margin-bottom: 130px;
-  }
-}
-@media screen and (max-width: 430px) {
-  .hero__numbers {
-    flex-direction: column;
   }
 }/*# sourceMappingURL=main.css.map */
