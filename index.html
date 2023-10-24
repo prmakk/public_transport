@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="На цьому сайті ви знайдете актуальний графік та маршрут на будь-який міський транспорт">
+    <meta name="keywords" content="розклад транспорту кривий ріг, кривий ріг, автобуси кривий ріг, троллейбуси кривий ріг, трамваї кривий ріг, маршрути трамваїв кривий ріг, маршрути автобусів кривий ріг">
     <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
-    <title>CityRideKR</title>
+    <title>CityRideKR - Розклад руху</title>
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container" id="top">
             <nav class="navbar">
                 <a href="#home" class="nav-branding">
                     <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/bus.png" alt="bus">
@@ -27,10 +29,10 @@
                         <a href="#timetable" class="nav__menu-link navTram">Трамвай</a>
                     </li>
                     <li class="nav__menu-item">
-                        <a href="#timetable" class="nav__menu-link">Тролейбус</a>
+                        <a href="#timetable" class="nav__menu-link navTrolleybus">Тролейбус</a>
                     </li>
                     <li class="nav__menu-item">
-                        <a href="#timetable" class="nav__menu-link">Швидкісний</a>
+                        <a href="#timetable" class="nav__menu-link navRapid">Швидкісний</a>
                     </li>
                 </ul>
     
@@ -46,11 +48,11 @@
     <main>
         <div class="container mainCon">
             <div class="hero">
-                <div class="hero__title">
-                    <h1 class="title">Розклад руху автобусів Кривий Ріг</h1>
+                <div class="hero__title _anim-items">
+                    <h1 class="title">Розклад руху міського транспорту в Кривому Розі</h1>
                 </div>
 
-                <div class="hero__cards">
+                <div class="hero__cards _anim-items">
                     <div class="hero__cards-card firstCard busChoose">
                         <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/bus.png" alt="bus">
                         <p>Автобус</p>
@@ -63,17 +65,17 @@
                         <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/tram.png" alt="tram">
                         <p>Трамвай</p>
                     </div>
-                    <div class="hero__cards-card">
+                    <div class="hero__cards-card trolleybusChoose">
                         <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/trolleybus.png" alt="trolleybus">
                         <p>Тролейбус</p>
                     </div>
-                    <div class="hero__cards-card lastCard">
+                    <div class="hero__cards-card lastCard rapidChoose">
                         <img width="30" height="30" src="https://img.icons8.com/glyph-neue/64/ffffff/tram.png" alt="tram"/>
                         <p>Швидкісний</p>
                     </div>
                 </div>
 
-                <div class="hero__numbers" id="timetable">
+                <div class="hero__numbers _anim-items _anim-done" id="timetable">
                     <div class="hero__numbers-num bus1">
                         <p>1</p>
                     </div>
@@ -154,43 +156,127 @@
                     <div class="hero__numbers-num tram27">
                         <p>27</p>
                     </div>
+
+                    <div class="hero__numbers-num trolleybus1">
+                        <p>1</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus2">
+                        <p>2</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus3">
+                        <p>3</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus4">
+                        <p>4</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus5">
+                        <p>5</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus7">
+                        <p>7</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus8">
+                        <p>8</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus9">
+                        <p>9</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus10">
+                        <p>10</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus11">
+                        <p>11</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus13">
+                        <p>13</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus14">
+                        <p>14</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus15">
+                        <p>15</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus16">
+                        <p>16</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus18">
+                        <p>18</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus20">
+                        <p>20</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus21">
+                        <p>21</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus22">
+                        <p>22</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus23">
+                        <p>23</p>
+                    </div>
+                    <div class="hero__numbers-num trolleybus24">
+                        <p>24</p>
+                    </div>
+
+
+                    <div class="hero__numbers-num rapid1m">
+                        <p>1М</p>
+                    </div>
                 </div>
 
-                <div class="hero__infoTitle">
+                <div class="hero__infoTitle _anim-items" id="firstTitle">
                     <h1>Автобус №1</h1>
                 </div>
                 
-                <div class="hero__table-first-title">
+                <div class="hero__table-first-title _anim-items">
                     <p>ст. Кривий Ріг - Головний - Пл. Толстого</p>
                 </div>
 
-                <div class="hero__table-first">
+                <div class="hero__table-first _anim-items">
                 </div>
 
-                <div class="hero__table-second-title">
+                <div class="hero__table-second-title _anim-items">
                     <p>ст. Кривий Ріг - Головний - Пл. Толстого</p>
                 </div>
 
-                <div class="hero__table-second">
+                <div class="hero__table-second _anim-items">
                 </div>
 
-                <div class="hero__route">
+                <div class="hero__route _anim-items">
                     <div class="hero__route-img">
                         <img src="images/bus1.jpg" alt="Bus1 Route" class="routeImage">
                     </div>
                     <a href="https://www.eway.in.ua/ru/cities/kryvyirih/routes/205" class="routeMore" target="_blank">Дізнатися більше</a>
                 </div>
             </div>
+            <div class="hero__goUp">
+                <img width="48" height="48" src="https://img.icons8.com/fluency/48/circled-chevron-up.png" alt="circled-chevron-up">
+            </div>
         </div>
     </main>
 
     <footer class="footer" id="footer">
-        <h2>Copyright © 2023 CityRideKR</h2>
-        <p>Designed by prmk</p>
-        <p>Coded by prmk</p>
+        <div class="container">
+            <div class="footer__elem">
+                <a href="https://t.me/prmakk"><img width="40" height="40" src="https://img.icons8.com/ios/50/ffffff/telegram.png" alt="telegram"></a>
+                <a href="https://t.me/prmakk">Телеграм канал</a>
+            </div>
+            <div class="footer__elem">
+                <h2>Copyright © 2023 CityRideKR</h2>
+                <p>Designed by prmk</p>
+                <p>Coded by prmk</p>
+            </div>
+            <div class="footer__elem">
+                <a href="mailto:cityridekr@gmail.com"><img width="30" height="30" src="https://img.icons8.com/ios/50/ffffff/mail.png" alt="mail"></a>
+                <a href="mailto:cityridekr@gmail.com">
+                    <i class="fa-solid fa-envelope"></i> cityridekr@gmail.com
+                </a>
+            </div>
+        </div>
     </footer>
 
     <script src="js/hamburger.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/scroll.js"></script>
 </body>
 </html>

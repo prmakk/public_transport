@@ -106,6 +106,7 @@ a{
         width: 100%;
         text-align: center;
         transition: .3s;
+        z-index: 999;
 
         &-item{
             margin: 16px 0px;
@@ -124,17 +125,35 @@ a{
         text-align: center;
         color: #fff;
         font-weight: 400;
+        transform: translate(0, 25%);
+        opacity: 0;
+        transition: all 0.8s ease;
+
+            &._active{
+                transform: translate(0, 0);
+                opacity: 1;
+            }
     }
 
+    &__cards{
+        transform: translate(0%, 25%);
+        opacity: 0;
+        transition: all 0.8s ease;
+
+        &._active{
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+    }
     
-    &__cards, &__numbers{
+    &__cards{
         padding: 5px;
         margin-top: 50px;
         display: flex;
         background-color: #fff;
         border-radius: 10px;
 
-        &-card, &-num{
+        &-card{
             padding: 15px 0px;
             display: flex;
             flex-direction: column;
@@ -169,11 +188,37 @@ a{
     }
 
     &__numbers{
-        gap: 10px;
+        padding: 5px;
+        margin-top: 50px;
+        background-color: #fff;
+        border-radius: 10px;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
         display: none;
 
         &-num{
             border-radius: 10px;
+            padding: 15px 0px;
+            gap: 10px;
+            //width: 100%;
+            background-color: $mainBgColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .1s all ease;
+
+            p{
+                color: #fff;
+                font-size: 18px;
+                font-weight: 500;
+                
+            }
+
+            &:hover{
+                background-color: $secondBgColor;
+                cursor: pointer;
+            }
         }
     }
 
@@ -194,6 +239,14 @@ a{
         background-color: #fff;
         max-height: 400px;
         overflow-y: scroll;
+        transform: translate(0%, 20%);
+        opacity: 0;
+        transition: all 0.8s ease;
+
+        &._active{
+            transform: translate(0, 0);
+            opacity: 1;
+        }
 
         th{
             font-size: 15px;
@@ -221,6 +274,14 @@ a{
             color: #fff;
             font-weight: 500;
             background-color: $secondBgColor;
+            transform: translate(0%, 125%);
+            opacity: 0;
+            transition: all 0.8s ease;
+
+            &._active{
+                transform: translate(0, 0);
+                opacity: 1;
+            }
         }
     }
 
@@ -236,6 +297,14 @@ a{
             color: #fff;
             font-weight: 500;
             background-color: $secondBgColor;
+            transform: translate(0%, 125%);
+            opacity: 0;
+            transition: all 0.8s ease;
+
+            &._active{
+                transform: translate(0, 0);
+                opacity: 1;
+            }
         }
     }
 
@@ -245,6 +314,14 @@ a{
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        transform: translate(0%, 40%);
+        opacity: 0;
+        transition: all 0.5s ease;
+
+        &._active{
+            transform: translate(0, 0);
+            opacity: 1;
+        }
 
         img{
             max-width: 1200px;
@@ -257,13 +334,35 @@ a{
             opacity: .7;
         }
     }
+
+    &__goUp{
+        position: fixed;
+        bottom: 10%;
+        right: 1%;
+        display: none;
+
+        img{
+            transition: all .4s ease;
+            animation: up .7s alternate infinite ease-in;
+    
+            @keyframes up {
+                0%{
+                    transform: scale(1);
+                }
+                100%{
+                    transform: scale(1.1);
+                }
+            }
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 .footer{
     background-color: darken($mainBgColor, 17%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     color: #fff;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -272,15 +371,37 @@ a{
     width: 100%;
     //display: none;
 
-    h2{
-        font-size: 18px;
-        margin-bottom: 15px;
-        font-weight: 400;
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    p{
-        text-align: center;
-        font-size: 10px;
+    &__elem{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &:nth-child(1){
+            //margin-right: 91px;
+        }
+
+        &:nth-child(2){
+            flex-direction: column;
+            gap: 0px;
+        }
+
+        h2{
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        p{
+            text-align: center;
+            font-size: 10px;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -291,12 +412,6 @@ a{
 @media screen and (max-width: 1200px) {
     .container{
         padding: 0px 15px;
-    }
-}
-
-@media screen and (max-width: 750px) {
-    .hero__numbers{
-        flex-direction: column;
     }
 }
 
@@ -317,4 +432,25 @@ a{
         margin-bottom: 130px;
     }
     
+}
+
+@media screen and (max-width: 720px) {
+    .footer .container{
+        gap: 20px;
+        max-height: 60px;
+        font-size: 12px;
+
+        .footer__elem{
+            padding-bottom: 5px;
+            flex-direction: column;
+
+            &:nth-child(2){
+                display: none;
+            }
+
+            &:nth-child(3){
+                padding-top: 10px;
+            }
+        }
+    }
 }

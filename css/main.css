@@ -96,6 +96,7 @@ a {
     width: 100%;
     text-align: center;
     transition: 0.3s;
+    z-index: 999;
   }
   .nav__menu-item {
     margin: 16px 0px;
@@ -109,15 +110,31 @@ a {
   text-align: center;
   color: #fff;
   font-weight: 400;
+  transform: translate(0, 25%);
+  opacity: 0;
+  transition: all 0.8s ease;
 }
-.hero__cards, .hero__numbers {
+.hero__title._active {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.hero__cards {
+  transform: translate(0%, 25%);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+.hero__cards._active {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.hero__cards {
   padding: 5px;
   margin-top: 50px;
   display: flex;
   background-color: #fff;
   border-radius: 10px;
 }
-.hero__cards-card, .hero__cards-num, .hero__numbers-card, .hero__numbers-num {
+.hero__cards-card {
   padding: 15px 0px;
   display: flex;
   flex-direction: column;
@@ -127,29 +144,51 @@ a {
   width: 100%;
   background-color: #710586;
 }
-.hero__cards-card p, .hero__cards-num p, .hero__numbers-card p, .hero__numbers-num p {
+.hero__cards-card p {
   color: #fff;
   font-size: 18px;
   font-weight: 500;
 }
-.hero__cards-card:hover, .hero__cards-num:hover, .hero__numbers-card:hover, .hero__numbers-num:hover {
+.hero__cards-card:hover {
   background-color: #d000b3;
 }
-.hero__cards .firstCard, .hero__numbers .firstCard {
+.hero__cards .firstCard {
   border-radius: 10px 0px 0px 10px;
 }
-.hero__cards .lastCard, .hero__numbers .lastCard {
+.hero__cards .lastCard {
   border-radius: 0px 10px 10px 0px;
 }
-.hero__cards:hover, .hero__numbers:hover {
+.hero__cards:hover {
   cursor: pointer;
 }
 .hero__numbers {
-  gap: 10px;
+  padding: 5px;
+  margin-top: 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
   display: none;
 }
 .hero__numbers-num {
   border-radius: 10px;
+  padding: 15px 0px;
+  gap: 10px;
+  background-color: #710586;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s all ease;
+}
+.hero__numbers-num p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+.hero__numbers-num:hover {
+  background-color: #d000b3;
+  cursor: pointer;
 }
 .hero__infoTitle {
   display: flex;
@@ -167,6 +206,13 @@ a {
   background-color: #fff;
   max-height: 400px;
   overflow-y: scroll;
+  transform: translate(0%, 20%);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+.hero__table-first._active, .hero__table-second._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 .hero__table-first th, .hero__table-second th {
   font-size: 15px;
@@ -191,6 +237,13 @@ a {
   color: #fff;
   font-weight: 500;
   background-color: #d000b3;
+  transform: translate(0%, 125%);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+.hero__table-first-title._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 .hero__table-second {
   margin-bottom: 30px;
@@ -204,6 +257,13 @@ a {
   color: #fff;
   font-weight: 500;
   background-color: #d000b3;
+  transform: translate(0%, 125%);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+.hero__table-second-title._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 .hero__route {
   margin-bottom: 123px;
@@ -211,6 +271,13 @@ a {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  transform: translate(0%, 40%);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.hero__route._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 .hero__route img {
   max-width: 1200px;
@@ -221,12 +288,30 @@ a {
   text-align: center;
   opacity: 0.7;
 }
+.hero__goUp {
+  position: fixed;
+  bottom: 10%;
+  right: 1%;
+  display: none;
+}
+.hero__goUp img {
+  transition: all 0.4s ease;
+  animation: up 0.7s alternate infinite ease-in;
+}
+@keyframes up {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+.hero__goUp img:hover {
+  cursor: pointer;
+}
 
 .footer {
   background-color: #2b0232;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: #fff;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -234,24 +319,34 @@ a {
   bottom: 0;
   width: 100%;
 }
-.footer h2 {
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__elem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer__elem:nth-child(2) {
+  flex-direction: column;
+  gap: 0px;
+}
+.footer__elem h2 {
   font-size: 18px;
   margin-bottom: 15px;
   font-weight: 400;
 }
-.footer p {
+.footer__elem p {
   text-align: center;
   font-size: 10px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1200px) {
   .container {
     padding: 0px 15px;
-  }
-}
-@media screen and (max-width: 750px) {
-  .hero__numbers {
-    flex-direction: column;
   }
 }
 @media screen and (max-width: 570px) {
@@ -266,5 +361,22 @@ a {
   }
   .mainCon {
     margin-bottom: 130px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .footer .container {
+    gap: 20px;
+    max-height: 60px;
+    font-size: 12px;
+  }
+  .footer .container .footer__elem {
+    padding-bottom: 5px;
+    flex-direction: column;
+  }
+  .footer .container .footer__elem:nth-child(2) {
+    display: none;
+  }
+  .footer .container .footer__elem:nth-child(3) {
+    padding-top: 10px;
   }
 }/*# sourceMappingURL=main.css.map */
